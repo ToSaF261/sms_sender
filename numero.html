@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envoyer SMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+          
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 200px; 
+            height: 200px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            animation: bouger 3s infinite alternate; 
+        }
+         @keyframes bouger {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-10px); }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('carte.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+	  <!-- Ajouter le logo ici -->
+    <img src="tosaf.png" alt="Logo" class="logo">
+
+    <div class="form-container">
+        <h1>Entrer votre numero pour voir si vous êtes validés </h1>
+        <form action="/cgi-bin/send_sms1.cgi" method="POST">
+            <label for="numero">Numéro de téléphone (ex : +261XXXXXXXXX) :</label>
+            <input type="text" id="numero" name="numero" required>
+            <input type="submit" value="Envoyer SMS">
+        </form>
+    </div>
+</body>
+</html>
